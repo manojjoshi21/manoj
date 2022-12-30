@@ -3,7 +3,6 @@ pipeline{
     stages{
         stage("Sonar Quality Check"){
             
-            }
             steps{
                 script{
                    withSonarQubeEnv(credentialsId: 'SonarJenkins') {
@@ -17,4 +16,4 @@ pipeline{
         }
     }
 
-
+}
