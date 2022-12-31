@@ -44,7 +44,10 @@ pipeline{
     stage('indentifying misconfigs using datree in helm charts'){
         steps{
             script{
-                sh 'helm datree test /var/lib/jenkins/workspace/Newbuild/kubernetes/myapp'
+                dir('kubernetes/'){
+                 sh 'helm datree test myapp/'
+                }
+                
             }
         }
     }
@@ -59,3 +62,9 @@ post {
 		 }
 	   }
 }
+
+
+
+    
+
+        
